@@ -48,13 +48,12 @@ public class Main {
 
         //Задача 3
         System.out.println("Задача 3");
-        short year = 2015;
-        if (year >= 1584) {
-            if (year % 4 == 0 && year % 100 != 0 && year % 400 != 0) {
-                System.out.println(year + " год является високосным");
-            } else {
-                System.out.println(year + " год не является високосным");
-            }
+        short year = 2021;
+        boolean leapYearStart = year >= 1584;
+        if (leapYearStart && year % 4 == 0 && year % 100 != 0 && year % 400 == 0) {
+            System.out.println(year + " год является високосным");
+        } else if (leapYearStart) {
+            System.out.println(year + " год не является високосным");
         } else {
             System.out.println("Високосного года не было ранее 1584 года");
         }
@@ -63,16 +62,32 @@ public class Main {
         System.out.println("Задача 4");
         short deliveryDistance = 95;
         int deliveryTime = 0;
-        if (deliveryDistance < 100) {
-            if (deliveryDistance <= 20) {
-                deliveryTime += 1;
-                System.out.println("Потребуется дней: " + deliveryTime);
-            } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-                deliveryTime += 2;
-                System.out.println("Потребуется дней: " + deliveryTime);
-            } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-                deliveryTime += 3;
-                System.out.println("Доставка займет трое суток");
+        if (deliveryDistance <= 20) {
+            deliveryTime += 1;
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            deliveryTime += 2;
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            deliveryTime += 3;
+            System.out.println("Потребуется дней: " + deliveryTime);
+        } else {
+            System.out.println("Cвыше 100 км доставки нет");
+        }
+
+        //Второй вариант
+        short deliveryDistance1 = 95;
+        int deliveryTime1 = 0;
+        if (deliveryDistance1 < 100) {
+            if (deliveryDistance1 <= 20) {
+                deliveryTime1 += 1;
+                System.out.println("Потребуется дней: " + deliveryTime1);
+            } else if (deliveryDistance1 > 20 && deliveryDistance1 <= 60) {
+                deliveryTime1 += 2;
+                System.out.println("Потребуется дней: " + deliveryTime1);
+            } else if (deliveryDistance1 > 60 && deliveryDistance1 <= 100) {
+                deliveryTime1 += 3;
+                System.out.println("Потребуется дней: " + deliveryTime1);
             }
         } else {
             System.out.println("Cвыше 100 км доставки нет");
