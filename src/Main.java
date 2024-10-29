@@ -97,6 +97,7 @@ public class Main {
         System.out.println("Задача 5");
         byte monthNumber = 12;
         switch (monthNumber) {
+            case 12:
             case 1:
             case 2:
                 System.out.println("Зима");
@@ -115,9 +116,6 @@ public class Main {
             case 10:
             case 11:
                 System.out.println("Осень");
-                break;
-            case 12:
-                System.out.println("Зима");
                 break;
             default:
                 System.out.println("Такого месяца не существует");
